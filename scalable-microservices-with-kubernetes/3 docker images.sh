@@ -29,4 +29,11 @@ CID="<CONTAINER ID/NAMES>"
 CIP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' $CID)
 curl  http://$CIP
 
-sudo docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(sudo docker ps -aq)
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(sudo docker ps -aq)
+
+
+# Stop instances
+docker stop $(docker ps -aq)
+
+# Remove the docker containers from the system
+docker rm $(docker ps -aq)
