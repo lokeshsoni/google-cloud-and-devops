@@ -17,9 +17,6 @@ sudo docker ps
 # Run a different version of nginx
 sudo docker run -d nginx:1.9.3
 
-# Run another version of nginx
-sudo docker run -d nginx:1.10.0
-
 # Check how many instances are running
 sudo docker ps
 sudo ps aux | grep nginx
